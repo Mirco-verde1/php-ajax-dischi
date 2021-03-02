@@ -29,21 +29,21 @@
 
 
 
-            <div class="album-box">
+            <div class="album-box" v-for="elem in albumData">
                  <div class="box-image">
-
+                   <img :src="elem.cover" alt="">
                  </div>
 
                  <div class="title">
-
+                  <h3>{{elem.artistname}}</h3>
                  </div>
 
                  <div class="artist">
-
+                    <h5>{{elem.albumname}}</h5>
                  </div>
 
                  <div class="year">
-
+                     <h5>{{elem.year}}</h5>
                  </div>
             </div>
 
