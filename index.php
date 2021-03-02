@@ -34,6 +34,7 @@
 
             <div class="album-box">
                  <div class="box-image">
+                   <img src="<?php echo $value['cover'] ?>" alt="">
                  </div>
 
                  <div class="title">
@@ -45,7 +46,7 @@
                  </div>
 
                  <div class="year">
-                    <h5> <?php echo $value['year']; ?></h5> 
+                    <h5> <?php echo $value['year']; ?></h5>
                  </div>
             </div>
 

@@ -38,6 +38,10 @@
   margin-top: 20px;
   text-align: center;
 }
+.app-container .content-background .container .album-container .album-box .box-image img {
+  width: 150px;
+  height: 150px;
+}
 .app-container .content-background .container .album-container .album-box .title h3 {
   color: #f8f8f8;
   font-size: 15px;
