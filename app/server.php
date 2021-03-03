@@ -2,25 +2,15 @@
 
 <?php
 require_once '../database/database.php';
+require_once '../database/function.php';
+
+header('Content-Type: application/json');
 
 
-      $request = $_GET['genere'];
-      $dataFiltered = [];
+
+filteredByGenre($dataAlbums,$request);
+echo json_encode($dataAlbums);
 
 
-      function filteredByGenre(){
 
-        foreach ($dataAlbums as $value) {
-          if ($value['genre'] === $request) {
-            $dataFiltered = json_encode($value['genre']);
-          }
-
-        }
-        return $dataFiltered;
-      }
-
-      if (array_key_exists('genere', $_GET) && !empty($request)) {
-        echo $dataFiltered;
-      }
-      header('Content-Type: application/json');
-      ?>
+?>
