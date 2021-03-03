@@ -2,9 +2,6 @@
 
 <?php
 require_once '../database/database.php';
-header('Content-Type: application/json');
-
-
 
 
       $request = $_GET['genere'];
@@ -17,11 +14,13 @@ header('Content-Type: application/json');
           if ($value['genre'] === $request) {
             $dataFiltered = json_encode($value['genre']);
           }
+
         }
         return $dataFiltered;
       }
 
-      if (!empty($request)) {
+      if (array_key_exists('genere', $_GET) && !empty($request)) {
         echo $dataFiltered;
       }
+      header('Content-Type: application/json');
       ?>
