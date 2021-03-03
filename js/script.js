@@ -3,6 +3,7 @@ new Vue({
 
   data:{
   albumData:[],
+
 },
 
 
@@ -13,7 +14,7 @@ new Vue({
 
         const data = resp.data;
         self.albumData = data;
-        console.log(self.albumData);
+
 
 
       })
