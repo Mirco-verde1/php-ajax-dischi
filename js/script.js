@@ -11,11 +11,13 @@ new Vue({
 
   mounted() {
   const self = this;
-    axios.get('http://locahost/php-ajax-dischi/app/server.php'  )
+    axios.get('app/server.php')
+
       .then(function(resp) {
 
         const data = resp.data;
         self.albumData = data;
+        console.log(self.albumData);
 
 
       })
@@ -34,22 +36,28 @@ new Vue({
         }
       });
 
-    }
+    },
 
+
+
+    chooseGenres:function(){
+
+     const self = this;
+      axios.get('app/server.php',{
+        params:{
+          genre: self.userSelect,
+        },
+      })
+
+       .then(function(resp){
+          self.albumData = resp.data;
+          console.log(self.albumData);
+
+      })
+
+    },
   },
 
-   chooseGenres:function(){
-    const self = this;
-    axios.get('http://localhost/php-ajax-dischi/app/server.php', {
-      params:{
-        genre: self.userSelect,
-      },
-    })
-    .then(function(resp){
-       self.albumData = resp.data;
 
-     })
-
-}
 })
   Vue.config.devtools = true;

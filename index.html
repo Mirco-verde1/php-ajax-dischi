@@ -19,8 +19,9 @@
   <div class="app-container" >
     <div class="header">
 
-   <select :class="albumsGenres()" v-model="userSelect" @click="chooseGenres()">
-     <option value="" v-for="elem in dataGenres">{{elem}}</option>
+   <select :class="albumsGenres()" v-model="userSelect" @change="chooseGenres()">
+     <option value="all">all</option>
+     <option  :value="elem" v-for="elem in dataGenres">{{elem}}</option>
    </select>"
 
     </div>
