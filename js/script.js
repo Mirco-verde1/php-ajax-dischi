@@ -2,6 +2,7 @@ new Vue({
   el:'#myApp',
 
   data:{
+
   albumData:[],
   dataGenres:[],
   userSelect:'',
@@ -20,6 +21,7 @@ new Vue({
       })
 
   },
+
   methods:{
 
     albumsGenres:function(){
@@ -40,9 +42,10 @@ new Vue({
     const self = this;
     axios.get('http://localhost/php-ajax-dischi/app/server.php', {
       params:{
-        genre: this.userSelect,
+        genre: self.userSelect,
       },
-    }).then(function(resp){
+    })
+    .then(function(resp){
        self.albumData = resp.data;
 
      })

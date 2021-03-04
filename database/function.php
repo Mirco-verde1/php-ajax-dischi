@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 $request = $_GET['genere'];
 
 
@@ -7,8 +8,12 @@ function filteredByGenre($dataAlbums, $request){
 
   foreach ($dataAlbums as $value) {
 
-    if ($value['genre'] === $request) {
+    if (!empty($request) && array_key_exists('genere', $_GET)) {
+
+      if ($value['genre'] === $request) {
       $dataFiltered[] = $value;
+      }
+
     }
     else {
       $dataFiltered[] = $dataAlbums;
